@@ -1,0 +1,695 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("assets/fonts/poppins.ttf");
+}
+
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    --black: #000;
+    --dark: #25293B;
+    --dark-blue-2: #2f407e;
+    --dark-blue: #3D52A0;
+    --blue: #7091E6;
+    --blue-2: #87a9ff;
+    --gray: #8697C4;
+    --gray-2: #ccc;
+    --white: #FFF;
+    --green: #5BEEB1;
+    --green-2: #8AEEC4;
+    --red: #e67080;
+
+    background-image: linear-gradient(to right bottom, #25293b, #2a314d, #2e385f, #324073, #374886, #3d5094, #4459a2, #4a61b1, #536dbe, #5d79cb, #6685d9, #7091e6);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.stars {
+    position: absolute;
+    background-image: url("assets/stars.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+/* Main */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+.logo h1 {
+    font-size: 2em;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.logo h1 b {
+    color: var(--green);
+}
+
+.title {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.title b {
+    color: var(--green);
+}
+
+.title p {
+    margin-top: 20px;
+    color: var(--white);
+    max-width: 40vw;
+    font-size: 1.2em;
+}
+
+.start {
+    position: relative;
+    display: block;
+    color: var(--white);
+    background: transparent;
+    font-size: 1em;
+    text-decoration: none;
+    border: 2px solid var(--green);
+    border-radius: 100px;
+    padding: 15px 40px;
+    overflow: hidden;
+    transition: 1s all ease;
+}
+
+.start p {
+    z-index: 1;
+    position: relative;
+}
+
+.start:hover {
+    cursor: pointer;
+}
+
+.start::before {
+    background: var(--green);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.start:hover::before{
+    height: 380%;
+}
+
+/* Mail */
+
+.container-2 {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.mail {
+    width: 80vw;
+    /* height: 80vh; */ /* This is set in the html */
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.parameter {
+    color: var(--gray);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.mail form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.mail form input {
+    border: transparent solid 2px;
+    background-color: #f3f3f3;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    color: var(--dark);
+}
+
+.mail form .warning {
+    border: var(--red) solid 2px;
+}
+
+.writeable {
+    border: transparent solid 2px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.writeable#warning {
+    border: var(--red) solid 2px;
+}
+
+.writeable:hover {
+    cursor: crosshair;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.options button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--white);
+    background: var(--blue);
+    font-size: 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: 1s all ease;
+    max-width: 200px;
+    flex: 1;
+}
+
+.options button p {
+    z-index: 1;
+    position: relative;
+}
+
+.options button img {
+    z-index: 1;
+    position: relative;
+    width: 24px;
+    height: auto;
+}
+
+.options button:hover {
+    cursor: pointer;
+}
+
+.options button::before {
+    background: var(--blue-2);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.options button:hover::before {
+    height: 380%;
+}
+
+.options button.process {
+    background: var(--green);
+}
+
+.options button.process::before {
+    background: var(--green-2);
+}
+
+.switch-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: dashed 2px var(--blue);
+    color: var(--blue);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 1em;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+/* Drawing */
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--dark);
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Loading */
+
+.white {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--white);
+    position: absolute;
+    z-index: -1;
+}
+
+.loader-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.loader  {
+    animation: rotate 1.5s infinite;  
+    height: 100px;
+    width: 100px;
+}
+  
+.loader:before, .loader:after {   
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 40px;  
+    width: 40px;
+}
+
+.loader:before {
+    animation: ball1 1.5s infinite;  
+    background-color: var(--blue);
+    box-shadow: 60px 0 0 var(--dark-blue-2);
+    margin-bottom: 20px;
+}
+
+.loader:after {
+    animation: ball2 1.5s infinite; 
+    background-color: var(--dark-blue);
+    box-shadow: 60px 0 0 var(--blue-2);
+}
+  
+@keyframes rotate {
+    0% { 
+        transform: rotate(0deg) scale(0.8); 
+    }
+    50% { 
+        transform: rotate(360deg) scale(1.2); 
+    }
+    100% { 
+        transform: rotate(720deg) scale(0.8); 
+    }
+}
+  
+@keyframes ball1 {
+    0% {
+        box-shadow: 60px 0 0 var(--blue-2);
+    }
+    50% {
+        box-shadow: 0 0 0 var(--blue-2);
+        margin-bottom: 0;
+        transform: translate(30px, 30px);
+    }
+    100% {
+        box-shadow: 60px 0 0 var(--blue-2);
+        margin-bottom: 20px;
+    }
+}
+  
+@keyframes ball2 {
+    0% {
+        box-shadow: 60px 0 0 var(--dark-blue-2);
+    }
+    50% {
+        box-shadow: 0 0 0 var(--dark-blue-2);
+        margin-top: -40px;
+        transform: translate(30px, 30px);
+    }
+    100% {
+        box-shadow: 60px 0 0 var(--dark-blue-2);
+        margin-top: 0;
+    }
+}
+
+/* Result */
+
+.container-3 {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processed-email {
+    background-color: var(--white);
+    padding: 20px;
+    width: 600px;
+}
+
+.color {
+    width: 100%;
+    height: 100%;
+    border: solid 4px var(--dark-blue);
+}
+
+.mail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.mail-content .subtitle {
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.mail-content #reciever, .mail-content #subject {
+    border: none;
+    border-bottom: solid 2px var(--gray);
+    outline: none;
+    color: var(--gray);
+    margin-top: 15px;
+    margin-bottom: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.mail-content #reciever:focus, .mail-content #subject:focus {
+    border-bottom: solid 2px var(--blue-2);
+    color: var(--blue-2);
+}
+
+.mail-content #text {
+    margin-top: 15px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #e5e8f8;
+    color: var(--dark-blue-2);
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.mail-options {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 90%;
+}
+
+.mail-options button, .mail-options a {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--white);
+    background: var(--blue);
+    font-size: 1em;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 40px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.mail-options button#send {
+    background: var(--green);
+    gap: 10px;
+}
+
+.mail-options button p, .mail-options a p {
+    z-index: 1;
+    position: relative;
+}
+
+.mail-options button img, .mail-options a img {
+    z-index: 1;
+    position: relative;
+    width: 30px;
+    height: auto;
+}
+
+.mail-options button:hover, .mail-options a:hover {
+    cursor: pointer;
+}
+
+.mail-options button::before, .mail-options a::before {
+    background: var(--blue-2);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.mail-options button#send::before {
+    background: var(--green-2);
+}
+
+.mail-options button:hover::before, .mail-options a:hover::before {
+    height: 380%;
+}
+
+/* Send */
+
+.container-4 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--white);
+    padding: 30px 80px;
+    padding-top: 80px;
+    position: relative;
+    overflow: visible;
+    border-radius: 20px;
+}
+
+.success {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--white);
+    top: -48px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 106px;
+    width: 106px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-box h1 {
+    color: var(--black);
+}
+
+.success-box p {
+    color: var(--black);
+}
+
+.again {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--white);
+    background: var(--blue);
+    font-size: 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: 1s all ease;
+    max-width: 200px;
+    flex: 1;
+    margin-top: 20px;
+}
+
+.again p {
+    z-index: 1;
+    position: relative;
+    color: var(--white);
+}
+
+.again img {
+    z-index: 1;
+    position: relative;
+    width: 24px;
+    height: auto;
+}
+
+.again:hover {
+    cursor: pointer;
+}
+
+.again::before {
+    background: var(--blue-2);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.again:hover::before {
+    height: 380%;
+}
+
+@media screen and (max-width: 1000px) {
+    body::before {
+        content: "";
+        background-color: var(--black);
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: 2;
+    }
+
+    body::after {
+        content: "Not available for mobile, sorry :(";
+        position: absolute;
+        color: var(--white);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        font-size: 3em;
+        text-align: center;
+    }
+}
