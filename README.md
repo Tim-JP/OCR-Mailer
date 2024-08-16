@@ -26,10 +26,7 @@ https://tim.puschel.se/hackathon/
 
 3. **Submit mail:**
 
-* When you're done, select if you want AI Enhance or not and proceed to click "Process".
-* AI Enhance corrects possible spelling mistakes or guesses poorly written text.
-
-   ![Loading Screenshot](screenshots/loading-screenshot.png)
+* When you're done, select if you want AI Enhance or not and proceed to click "Process". (AI Enhance corrects possible spelling mistakes or guesses poorly written text).
 
 4. **Send email:**
 
